@@ -7,7 +7,6 @@ import multiprocessing
 from threading import Thread, Lock
 from multiprocessing import Process
 
-MAX_WORKER_THREADS = 3
 FFMPEG_BINARY_PATH = 'ffmpeg'
 
 
@@ -302,7 +301,7 @@ def repl_routine(input_queue, output_queue):
         elif choice == 2:
             print(
                 'Max number of worker threads configured is {}'.format(
-                    MAX_WORKER_THREADS
+                    multiprocessing.cpu_count()
                 )
             )
         elif choice == 3:
@@ -382,7 +381,7 @@ def main():
     b_queue = multiprocessing.Queue()
     backend_proc = Process(
         target=run_backend,
-        args=(b_queue, a_queue, MAX_WORKER_THREADS,)
+        args=(b_queue, a_queue, multiprocessing.cpu_count(),)
     )
     backend_proc.start()
     repl_routine(a_queue, b_queue)
