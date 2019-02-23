@@ -12,7 +12,7 @@ FFMPEG_BINARY_PATH = 'ffmpeg'
 
 
 FFMPEG_COMMAND_TEMPLATE = (
-    'ffmpeg -y -i {input} -b:v {vid_bit_rate}M -r {fps} -s hd{res} {output}'
+    'ffmpeg -y -i {input} -b:v {vid_bit_rate}M -s hd{res} {output}'
 )
 
 
@@ -141,7 +141,6 @@ class EncodeWorker(Thread):
                     input=encode_task.filename,
                     output=encode_task.output_name,
                     vid_bit_rate=encode_task.bit_rate_vid,
-                    fps=encode_task.fps,
                     res=encode_task.res
                 )
                 cmd_args = cmd.split(' ')
@@ -222,7 +221,7 @@ def repl_get_new_task():
             )
 
     fps = '30'
-    while True:
+    '''while True:
         user_input = repl_get_input(
             'Enter video frame rate (hit enter for default 30fps)\n'
             '>    '
@@ -243,7 +242,7 @@ def repl_get_new_task():
         except ValueError:
             print(
                 'Error parsing input: please enter a valid integer for frame rate!'
-            )
+            )'''
 
     resolution = '480'
     while True:
