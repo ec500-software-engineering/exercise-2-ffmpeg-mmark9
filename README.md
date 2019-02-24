@@ -14,7 +14,7 @@ Current output format support is `480p` or `720p` at `1Mbps` or `1Mbps`.
 To run the encoder tests, simply execute `pytest`. You can specify the video path using the `--video_path` switch.
 If `ffprobe` is not in your OS program path, you can specify the path to the binary using the `--ffprobe` switch.
 
-### Measuring performance (Part 1 of assignment)
+## Measuring performance (Part 1 of assignment)
 A single instance of `ffmpeg` nearly 100% of cpu usage on a dual core with 2 hardware threads per core.
 Therefore, the application only assigns one ffmpeg instance per hardware thread which means only
 videos can be encoded at a time.
