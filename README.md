@@ -3,6 +3,10 @@ A python interactive tool which encodes multiple videos
 simultaneously using a combination of multiprocessing and
 multi-threading.
 
+## Requirements
+
+`ffmpeg` should be found in one of your program paths on your OS. Currently you can only specify the path of 
+`ffprobe` for testing. Future updates will add the ability to specify paths through a settings file. 
 
 ## Run instructions
 This application implements a [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) environment
