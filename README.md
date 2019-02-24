@@ -16,8 +16,7 @@ If `ffprobe` is not in your OS program path, you can specify the path to the bin
 
 ## Measuring performance (Part 1 of assignment)
 A single instance of `ffmpeg` nearly 100% of cpu usage on a dual core with 2 hardware threads per core.
-Therefore, the application only assigns one ffmpeg instance per hardware thread which means only
-videos can be encoded at a time.
+Therefore, the application only assigns one ffmpeg instance per hardware thread.
 
 ![htop output](media/htop_output.png "htop output")
 
