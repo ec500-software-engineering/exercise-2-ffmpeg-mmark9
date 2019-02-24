@@ -8,9 +8,6 @@ from multiprocessing import Process
 from defines.common import Command, Packet, \
     PacketType, SynchronizedTaskCounter, Status, EncodeTask
 
-FFMPEG_BINARY_PATH = 'ffmpeg'
-
-
 REPL_MAIN_MENU = '''
 *******Welcome to the encoding asynchronous demo!*********
 
