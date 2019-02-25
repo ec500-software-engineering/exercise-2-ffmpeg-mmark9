@@ -7,5 +7,6 @@ setup(
     license='MIT',
     author='Miguel',
     author_email='mmark9@bu.edu',
-    description='async hw'
+    description='async hw',
+    install_requires=['flake8','pytest'],
 )
