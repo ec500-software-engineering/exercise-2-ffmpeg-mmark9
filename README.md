@@ -9,10 +9,28 @@ multi-threading.
 `ffprobe` for testing. Future updates will add the ability to specify paths through a settings file. 
 
 ## Run instructions
-This application implements a [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) environment
-so simply execute `python main.py` to launch.
+This application has two run modes: (1) batch mode (non-interactive) and (2) interactive
 
-Current output format support is `480p` or `720p` at `1Mbps` or `1Mbps`.
+To launch batch mode simple execute `python main.py -job_file <path>` where `path` is the file path to a CSV file.
+
+The CSV file has the following format:
+```
+input_file_path,output_file_path,bit_rate,resolution
+```
+
+`bit_rate` is limited to `1Mbps` or `2Mbps`. Specify either option using `1` or `2` respectively.
+`resolution` is limited to `480p` or `720p`. Specify either option using `480` or `720` respectively.
+
+Example job.csv:
+```
+/tmp/mov.avi,/tmp/mov1.mp4,1,480
+/tmp/mov.avi,/tmp/mov2.mp4,2,480
+/tmp/mov.avi,/tmp/mov3.mp4,1,720
+```
+
+To run the program interactively execute `python main.py --interactive`.
+The user interface is implemented through a [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) 
+environment.
 
 ## Testing instructions
 To run the encoder tests, simply execute `pytest`. You can specify the video path using the `--video_path` switch.
