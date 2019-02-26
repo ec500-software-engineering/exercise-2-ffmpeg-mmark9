@@ -33,8 +33,7 @@ The user interface is implemented through a [REPL](https://en.wikipedia.org/wiki
 environment.
 
 ## Testing instructions
-To run the encoder tests, simply execute `pytest`. You can specify the video path using the `--video_path` switch.
-If `ffprobe` is not in your OS program path, you can specify the path to the binary using the `--ffprobe` switch.
+To run the encoder tests, simply execute `pytest`. 
 
 ## Measuring performance (Part 1 of assignment)
 A single instance of `ffmpeg` nearly 100% of cpu usage on a dual core with 2 hardware threads per core.
